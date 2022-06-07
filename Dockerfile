@@ -1,8 +1,14 @@
 from tacogips/jupyter-lab-rust:latest
 RUN pip3 install pandas polars
+
+ARG CUDA_VER=cu113
+ARG TORCH_VER=1.10.0
+ARG TORCH_VISION_VER=0.11.1
+ARG TORCH_AUDIO_VER=0.10.0
+
 #RUN pip3 torch torchvision torchaudio
 # ref. https://www.gcptutorials.com/post/how-to-install-pytorch-with-pip
-RUN pip3 install torch==1.10.0+cu113 torchvision==0.11.1+cu113 torchaudio==0.10.0+cu113 -f https://download.pytorch.org/whl/cu113/torch_stable.html
+RUN pip3 install torch==${TORCH_VER}+${CUDA_VER} torchvision==${TORCH_VISION_VER}+${CUDA_VER} torchaudio==${TORCH_AUDIO_VER}+${CUDA_VER} -f https://download.pytorch.org/whl/${CUDA_VER}/torch_stable.html
 
 WORKDIR /notebooks
 
