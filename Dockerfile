@@ -1,4 +1,4 @@
-from tacogips/jupyter-lab-rust:latest
+FROM tacogips/jupyter-lab-rust:latest
 RUN pip3 install pandas polars
 
 ARG CUDA_VER=cu113
