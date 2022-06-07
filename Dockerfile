@@ -1,4 +1,4 @@
-from rust:tacogips/jupyter-lab-rust:latest
+from tacogips/jupyter-lab-rust:latest
 RUN pip3 install pandas polars
 
 WORKDIR /notebooks

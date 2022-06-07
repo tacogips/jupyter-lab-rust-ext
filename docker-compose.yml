@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+  jupyter:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./vol:/notebooks
+    ports:
+      - 8889:8888
